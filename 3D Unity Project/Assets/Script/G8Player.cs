@@ -9,13 +9,20 @@ public class G8Player : MonoBehaviour
     public bool mission = false;
     public string Name = "G8雞";
 
-    public void action(int speed)
+    /// <summary>
+    /// 移動
+    /// </summary>
+
+    private void action(int speed)
     {
         print("雞雞速度" + speed);
 
     }
 
-    public void turn_round(float trun)
+    /// <summary>
+    ///旋轉 
+    /// </summary>
+    private void turn_round(float trun)
     {
 
 
@@ -23,8 +30,11 @@ public class G8Player : MonoBehaviour
 
 
     }
-
-    public void scream(string scream="叫")
+    /// <summary>
+    /// 亂叫
+    /// </summary>
+   
+    private void scream(string scream="叫")
     {
 
 
@@ -32,7 +42,7 @@ public class G8Player : MonoBehaviour
 
 
     }
-    public void pick (bool pick = true)
+    private void pick (bool pick = true)
     {
 
 
