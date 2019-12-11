@@ -2,19 +2,36 @@
 
 public class G8Player : MonoBehaviour
 {
-    [Header("G8雞的控制"), Range(1, 100)]
+    [Header("G8雞的控制"), Range(1, 2000)]
     public int speed = 10;
-    [Tooltip("選轉速度"), Range(1, 100)]
-    public float trun = 20.5f;
+    [Tooltip("選轉速度"), Range(1, 200)]
+    public float turn = 20.5f;
     public bool mission = false;
     public string Name = "G8雞";
+
+    public Transform tran;
+    public Rigidbody rigi;
+    public Animator ani;
+
+    private void Update()
+    {
+
+        turn_round();
+        action();
+        pick();
+        scream();
+
+    }
 
     /// <summary>
     /// 移動
     /// </summary>
 
-    private void action(int speed)
+    private void action()
     {
+        float v = Input.GetAxis("Vertical");//W1 S-1 
+        ///rigi.AddForce(0, 0, speed * v);//世界座標
+        rigi.AddForce(tran.forward * speed * v*Time.deltaTime);
         print("雞雞速度" + speed);
 
     }
@@ -22,11 +39,13 @@ public class G8Player : MonoBehaviour
     /// <summary>
     ///旋轉 
     /// </summary>
-    private void turn_round(float trun)
+    private void turn_round()
     {
+        float h = Input.GetAxis("Horizontal");///A-1,D1
 
+        tran.Rotate(0, turn*h * Time.deltaTime, 0);
 
-        print("雞雞旋轉" + trun);
+        print("雞雞旋轉" + turn);
 
 
     }
@@ -34,16 +53,25 @@ public class G8Player : MonoBehaviour
     /// 亂叫
     /// </summary>
    
-    private void scream(string scream="叫")
+    private void pick()
     {
+        if (Input.GetKeyDown("space"))
+        {
 
+            ani.SetTrigger("eat or get somthing");
+        } 
 
-        print("雞雞叫" + scream);
+        
 
 
     }
-    private void pick (bool pick = true)
+    private void scream(bool pick = true)
     {
+        if (Input.GetMouseButton(0))
+        {
+
+            ani.SetTrigger("start run and papa");
+        }
 
 
         print("雞雞撿東西" + pick);

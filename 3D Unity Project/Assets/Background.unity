@@ -623,10 +623,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3687183eb9b8d4e914261404d9e13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  trun: 30.8
+  speed: 1226
+  turn: 200
   mission: 0
   Name: "G8\u96DE"
+  tran: {fileID: 283163129}
+  rigi: {fileID: 283163132}
+  ani: {fileID: 283163130}
+--- !u!4 &283163129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: d623cd35a78380d4eb0457c4e483abed,
+    type: 3}
+  m_PrefabInstance: {fileID: 21203080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &283163130 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: d623cd35a78380d4eb0457c4e483abed,
+    type: 3}
+  m_PrefabInstance: {fileID: 21203080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &283163131
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283163127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.24
+  m_Height: 0.55
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!54 &283163132
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283163127}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 2.98
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &331245869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1054,7 @@ GameObject:
   - component: {fileID: 708049738}
   - component: {fileID: 708049737}
   - component: {fileID: 708049739}
+  - component: {fileID: 708049740}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -1060,7 +1106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708049736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29cced7a96a9e8f40b780465d3195740, type: 3}
   m_Name: 
@@ -1068,6 +1114,20 @@ MonoBehaviour:
   opendoor: 0
   score: -74
   combo: 0
+--- !u!114 &708049740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708049736}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d34377074a433d47b5f472e11bff9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test1: {fileID: 283163129}
+  test2: {fileID: 283163129}
 --- !u!1001 &837158032
 PrefabInstance:
   m_ObjectHideFlags: 0
