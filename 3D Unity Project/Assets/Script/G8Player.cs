@@ -12,7 +12,9 @@ public class G8Player : MonoBehaviour
     public Transform tran;
     public Rigidbody rigi;
     public Animator ani;
-
+    public AudioSource aud;
+    public AudioClip soundbark;
+ 
     private void Update()
     {
 
@@ -29,9 +31,14 @@ public class G8Player : MonoBehaviour
 
     private void action()
     {
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("Eat")) return;///若動畫為"eat"則跳出
+
         float v = Input.GetAxis("Vertical");//W1 S-1 
         ///rigi.AddForce(0, 0, speed * v);//世界座標
         rigi.AddForce(tran.forward * speed * v*Time.deltaTime);
+
+        ani.SetBool("start walk", v != 0);
+
         print("雞雞速度" + speed);
 
     }
@@ -59,6 +66,8 @@ public class G8Player : MonoBehaviour
         {
 
             ani.SetTrigger("eat or get somthing");
+            aud.PlayOneShot(soundbark);
+
         } 
 
         

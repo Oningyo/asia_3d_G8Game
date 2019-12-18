@@ -63,12 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CameraControl.cs" />
     <Compile Include="Assets\Script\G8Player.cs" />
     <Compile Include="Assets\Script\LearnAPI.cs" />
     <Compile Include="Assets\Script\learnAPI2.cs" />
     <Compile Include="Assets\Script\learnIf.cs" />
+    <Compile Include="Assets\Script\learnLerp.cs" />
     <Compile Include="Assets\Script\Learnmethod.cs" />
     <Compile Include="Assets\Script\learnOparator.cs" />
+    <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/A309/Documents/GitHub/asia_3d_G8Game/3D Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
