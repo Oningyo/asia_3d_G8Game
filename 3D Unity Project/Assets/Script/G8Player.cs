@@ -14,7 +14,39 @@ public class G8Player : MonoBehaviour
     public Animator ani;
     public AudioSource aud;
     public AudioClip soundbark;
- 
+    
+    [Header("撿東西的位置")]
+    public Rigidbody rigcatch;
+
+
+    //觸發碰撞時持續執行(一秒執行60次)碰撞物件資訊
+    private void OnTriggerStay(Collider other)
+    {
+
+        print(other.name);
+        //如果碰撞元件的名稱為
+        if (other.name == "Burger"&&ani.GetCurrentAnimatorStateInfo(0).IsName("Eat")) 
+        {
+            //物理.忽略碰撞
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
+            //碰撞物件.取得元件<泛型>().連接身體=撿物品位置
+            other.GetComponent<HingeJoint>().connectedBody = rigcatch;
+        
+        }
+
+        if (other.name == "stonetable" && ani.GetCurrentAnimatorStateInfo(0).IsName("Eat"))
+        {
+           
+            GameObject.Find("Burger").GetComponent<HingeJoint>().connectedBody = null;
+
+        }
+
+
+
+
+    }
+
+
     private void Update()
     {
 
